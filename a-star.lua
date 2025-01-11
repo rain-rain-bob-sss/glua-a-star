@@ -36,19 +36,18 @@ local cachedPaths = nil
 -- local functions
 ----------------------------------------------------------------
 
-function dist ( x1, y1, x2, y2 )
-	
-	return math.sqrt ( math.pow ( x2 - x1, 2 ) + math.pow ( y2 - y1, 2 ) )
+function dist ( pos1, pos2 )
+	return pos1:Distance(pos2)
 end
 
 function dist_between ( nodeA, nodeB )
 
-	return dist ( nodeA.x, nodeA.y, nodeB.x, nodeB.y )
+	return dist ( nodeA.pos, nodeB.pos )
 end
 
 function heuristic_cost_estimate ( nodeA, nodeB )
 
-	return dist ( nodeA.x, nodeA.y, nodeB.x, nodeB.y )
+	return dist ( nodeA.pos, nodeB.pos )
 end
 
 function is_valid_node ( node, neighbor )
