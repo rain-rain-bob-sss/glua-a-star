@@ -116,8 +116,7 @@ function a_star ( start, goal, nodes, valid_node_func )
 	local closedset = {}
 	local openset = { start }
 	local came_from = {}
-
-	if valid_node_func then is_valid_node = valid_node_func end
+	local is_valid_node = valid_node_func or is_valid_node
 
 	local g_score, f_score = {}, {}
 	g_score [ start ] = 0
