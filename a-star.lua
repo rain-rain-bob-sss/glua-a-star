@@ -163,9 +163,9 @@ function clear_cached_paths ()
 	cachedPaths = nil
 end
 
-function distance ( x1, y1, x2, y2 )
+function distance ( pos1, pos2 )
 	
-	return dist ( x1, y1, x2, y2 )
+	return dist ( pos1, pos2 )
 end
 
 function path ( start, goal, nodes, ignore_cache, valid_node_func )
